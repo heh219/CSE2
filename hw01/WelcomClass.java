@@ -20,7 +20,7 @@ public class WelcomClass{
     System.out.println("        -------------    ");
     System.out.println("    ^   ^   ^   ^   ^   ^   ");
     System.out.println("   / \\ / \\ / \\ / \\ / \\ / \\");
-    System.out.println("<---H---E---H---2---1---9->");
+    System.out.println("  <-H---E---H---2---1---9->");
     System.out.println("   \\ / \\ / \\ / \\ / \\ / \\ /");
     System.out.println("    v   v   v   v   v   v   ");
     System.out.println("This August my wife and I took an eleven-day, 675-mile bike");
