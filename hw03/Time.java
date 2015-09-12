@@ -19,8 +19,8 @@ public class Time{
         System.out.print("enter the time that you will be eating dinner in the form HHMM: ");
         double dinnerTime = myScanner.nextDouble();
         int hours, minutes;//to store digits in hours and munites form
-        hours=(int)((dinnerTime-currentTime)/100);//we only need to use HH part
-        minutes=(int)(dinnerTime-currentTime-hours*100);//we only need MM part in munites
+        hours=(int)((dinnerTime-currentTime)/100);//seperate HH part in HHMM form in Ten-digit
+        minutes=(int)(dinnerTime-currentTime-hours*100);//seperate MM part in HHMM form in Ten-digit
         System.out.println("you have " + hours + " hours and " + minutes + " minutes until dinner");
     }//end of this method
 }//end of class
