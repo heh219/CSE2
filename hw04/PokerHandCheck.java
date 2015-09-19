@@ -13,6 +13,8 @@ public class PokerHandCheck{
 public static void main(String[] args){
     //add main method
     
+    System.out.println("You random cards were: ");
+    
     //input random CardNumber and suits
     int CardNumber=(int)(Math.random()*13)+1;
     int Suits=(int)(Math.random()*4)+1;
