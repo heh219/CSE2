@@ -309,10 +309,7 @@ public static void main(String[] args){
             System.out.println("You have three of a kind!");
         }
         else if (q==4){
-            System.out.println("You have four of a kind!");
-        }
-        else if (q==5){
-            System.out.println("You are so lucky! You have five of a kind!");
+            System.out.println("You are so lucky! You have four of a kind!");
         }
     }//end of this method
 }//end of this class
