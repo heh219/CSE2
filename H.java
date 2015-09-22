@@ -1,9 +1,14 @@
 public class H{
     public static void main(String[] args){
-        double a = 2.54;
-        double b = 3.14;
-        double c = 4.13; 
-        boolean x = a <= b&& x= a <= --c;
+        double z = 3.0, y = 2.4;
+int x = 2;
+
+z = x + y;
+x = x;
+z -= x + y;
+x+= z;
+x += y;
+
 
 
 

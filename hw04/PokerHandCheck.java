@@ -253,63 +253,177 @@ public static void main(String[] args){
         default: O="King";
         break;
     }//end of this switch
+    
     System.out.println("You pick "+O+" of the "+W);
     
-    int q=0;//to count number of pairs
-    if (CardNumber1==CardNumber2){
-        q=q+1;
-        
+    if (CardNumber!=CardNumber1&&CardNumber!=CardNumber2&&CardNumber!=CardNumber3
+    &&CardNumber!=CardNumber4&&CardNumber1!=CardNumber2&&CardNumber1!=CardNumber3&&
+    CardNumber1!=CardNumber4&&CardNumber2!=CardNumber3&&CardNumber2!=CardNumber4&&CardNumber3!=CardNumber4){
+        System.out.println("You have a high card hand!");
     }
-        else if (CardNumber1==CardNumber3){
-            q=q+1;
-        
-        }
-        else if (CardNumber1==CardNumber4){
-            q=q+1;
-        
-        }
-        else if (CardNumber1==CardNumber){
-            q=q+1;
-        
-        }
-        else if (CardNumber==CardNumber2){
-            q=q+1;
-        
-        }
-        else if (CardNumber1==CardNumber3){
-            q=q+1;
-        
-        }
-        else if (CardNumber==CardNumber4){
-            q=q+1;
-        
-        }
-        else if (CardNumber2==CardNumber3){
-            q=q+1;
-        
-        }
-        else if (CardNumber2==CardNumber4){
-            q=q+1;
-       
-        }
-        else if (CardNumber3==CardNumber4){
-            q=q+1;
-        
-        }
-        else{
-        System.out.println("You have a high hand card!");
-        }
-    if (q==1){
-        System.out.println("You have a pair!");
+    else if (CardNumber==CardNumber1&&CardNumber==CardNumber2&&CardNumber2==CardNumber3&&CardNumber3!=CardNumber4){
+        System.out.println("You have four of a kind!");
     }
-        else if (q==2){
-            System.out.println("You have two pairs!");
-        }
-        else if (q==3){
-            System.out.println("You have three of a kind!");
-        }
-        else if (q==4){
-            System.out.println("You are so lucky! You have four of a kind!");
-        }
-    }//end of this method
+    else if (CardNumber==CardNumber1&&CardNumber1==CardNumber2&&CardNumber2==CardNumber4&&CardNumber4!=CardNumber3){
+        System.out.println("You have four of a kind!");
+    }
+    else if (CardNumber==CardNumber2&&CardNumber2==CardNumber3&&CardNumber3==CardNumber4&&CardNumber4!=CardNumber1){
+        System.out.println("You have four of a kind!");
+    }
+    else if (CardNumber==CardNumber1&&CardNumber1==CardNumber3&&CardNumber3==CardNumber4&&CardNumber4!=CardNumber2){
+        System.out.println("You have four of a kind!");
+    }
+    else if (CardNumber1==CardNumber2&&CardNumber2==CardNumber3&&CardNumber3==CardNumber4&&CardNumber4!=CardNumber){
+        System.out.println("You have four of a kind!");
+    }
+    else if (CardNumber1==CardNumber2&&CardNumber2==CardNumber3&&CardNumber==CardNumber4){
+        System.out.println("You have three of a kind and a pair!");
+    }
+    else if (CardNumber1==CardNumber2&&CardNumber2==CardNumber4&&CardNumber==CardNumber3){
+        System.out.println("You have three of a kind and a pair!");
+    }
+    else if (CardNumber3==CardNumber2&&CardNumber2==CardNumber4&&CardNumber==CardNumber1){
+        System.out.println("You have three of a kind and a pair!");
+    }
+    else if (CardNumber==CardNumber1&&CardNumber2==CardNumber1&&CardNumber3==CardNumber4){
+        System.out.println("You have three of a kind and a pair!");
+    }
+    else if (CardNumber==CardNumber1&&CardNumber1==CardNumber3&&CardNumber2==CardNumber4){
+        System.out.println("You have three of a kind and a pair!");
+    }
+    else if (CardNumber==CardNumber2&&CardNumber2==CardNumber4&&CardNumber1==CardNumber3){
+        System.out.println("You have three of a kind and a pair!");
+    }
+    else if (CardNumber==CardNumber3&&CardNumber4==CardNumber3&&CardNumber1==CardNumber2){
+        System.out.println("You have three of a kind and a pair!");
+    }
+    else if (CardNumber==CardNumber2&&CardNumber2==CardNumber3&&CardNumber1==CardNumber4){
+        System.out.println("You have three of a kind and a pair!");
+    }
+    else if (CardNumber1==CardNumber&&CardNumber1==CardNumber4&&CardNumber2==CardNumber3){
+        System.out.println("You have three of a kind and a pair!");
+    }
+    else if (CardNumber==CardNumber1&&CardNumber==CardNumber2){
+        System.out.println("You have three of a kind!");
+    }
+    else if (CardNumber==CardNumber1&&CardNumber==CardNumber3){
+         System.out.println("You have three of a kind!");
+    }
+    else if (CardNumber==CardNumber1&&CardNumber==CardNumber4){
+         System.out.println("You have three of a kind!");
+    }
+    else if (CardNumber==CardNumber2&&CardNumber==CardNumber3){
+        System.out.println("You have three of a kind!");
+    }
+    else if (CardNumber==CardNumber2&&CardNumber==CardNumber4){
+        System.out.println("You have three of a kind!");
+    }
+    else if (CardNumber==CardNumber3&&CardNumber==CardNumber4){
+        System.out.println("You have three of a kind!");
+    }
+    else if (CardNumber1==CardNumber2&&CardNumber1==CardNumber3){
+         System.out.println("You have three of a kind!");
+    }
+    else if (CardNumber1==CardNumber2&&CardNumber1==CardNumber4){
+         System.out.println("You have three of a kind!");
+    }
+    else if (CardNumber2==CardNumber3&&CardNumber2==CardNumber4){
+         System.out.println("You have three of a kind!");
+    }
+    else if (CardNumber==CardNumber1&&CardNumber2==CardNumber3){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber==CardNumber1&&CardNumber2==CardNumber4){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber==CardNumber1&&CardNumber4==CardNumber3){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber==CardNumber2&&CardNumber1==CardNumber3){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber==CardNumber2&&CardNumber1==CardNumber4){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber==CardNumber2&&CardNumber3==CardNumber4){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber==CardNumber3&&CardNumber1==CardNumber2){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber==CardNumber3&&CardNumber1==CardNumber4){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber==CardNumber3&&CardNumber4==CardNumber2){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber==CardNumber4&&CardNumber1==CardNumber2){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber==CardNumber4&&CardNumber1==CardNumber3){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber==CardNumber4&&CardNumber3==CardNumber2){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber1==CardNumber2&&CardNumber==CardNumber3){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber1==CardNumber2&&CardNumber==CardNumber4){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber1==CardNumber2&&CardNumber4==CardNumber3){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber1==CardNumber3&&CardNumber==CardNumber2){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber1==CardNumber3&&CardNumber==CardNumber4){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber1==CardNumber3&&CardNumber2==CardNumber4){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber1==CardNumber4&&CardNumber==CardNumber3){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber1==CardNumber4&&CardNumber==CardNumber2){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber1==CardNumber4&&CardNumber2==CardNumber3){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber2==CardNumber3&&CardNumber==CardNumber1){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber2==CardNumber3&&CardNumber==CardNumber4){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber2==CardNumber3&&CardNumber4==CardNumber1){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber2==CardNumber4&&CardNumber==CardNumber1){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber2==CardNumber4&&CardNumber==CardNumber3){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber2==CardNumber4&&CardNumber3==CardNumber1){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber3==CardNumber4&&CardNumber==CardNumber1){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber3==CardNumber4&&CardNumber==CardNumber2){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber3==CardNumber4&&CardNumber2==CardNumber1){
+        System.out.println("You have two pairs!");
+    }
+    else if (CardNumber==CardNumber1||CardNumber==CardNumber2||
+    CardNumber==CardNumber3||CardNumber==CardNumber4||CardNumber1==CardNumber2||
+    CardNumber1==CardNumber3||CardNumber1==CardNumber4||CardNumber2==CardNumber3||CardNumber2==CardNumber4||CardNumber3==CardNumber4){
+         System.out.println("You have a pair!");
+    }   
+}//end of this method
 }//end of this class
