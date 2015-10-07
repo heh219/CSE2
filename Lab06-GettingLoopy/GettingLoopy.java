@@ -40,79 +40,66 @@ public class GettingLoopy{
       
         System.out.println(" ");//print a space
         System.out.print("While loop: ");//print second title of second loop
+        n=10;//define n
+        int c,i;//int c and i to count
+        while(n<100){//check while loop condition
+            c=0;//define c
+            i=2;//define i
+            while(i<(n/2)){//check while loop condition
+                if(n%i==0){//check if statement
+                    c++;//define c
+                }//end if function
+            i++;}//end while loop
+            if(c==0){//check if statement
+                System.out.print(" "+n);//print result
+            }//end if function
+        n++;//define n
+        }//end while loop
         
-       /* int x=10;//input value of n
-        int y=2;//input value of y
-        int p=0;
-        while (x<=100){
-            while(y<x){
-              if(x%y==0){
-                p++;  
-                  }
-              else if(x%y!=0){
-                p=p;
-              }
-            y++;
-            }
-        x++;
-        }
-        if(p==0){
-            System.out.print(x + " ");
-        }
-        System.out.println(" ");
-        */
-        System.out.println("Step 3: ");
-        int number = (int)(Math.random()*200)+1;
-        int d=1;
-        while(d<=20&&d<=number){
-            System.out.print("ツ");
-            d++;
-        }
-        System.out.println(" ");
-        while(d<20&&d<=40&&d<=number){
-            System.out.print("ツ");
-            d++;
-        }
-        System.out.println(" ");
-        while(d>40&&d<=80&&d<=number){
-            System.out.print("ツ");
-            d++;
-        }
-        System.out.println(" ");
-        while(d>80&&d<=100&&d<=number){
-            System.out.print("ツ");
-            d++;
-        }
-        System.out.println(" ");
-        while(d>100&&d<=120&&d<=number){
-            System.out.print("ツ");
-            d++;
-        }
-        System.out.println(" ");
-        while(d>120&&d<=140&&d<=number){
-            System.out.print("ツ");
-            d++;
-        }
-        System.out.println(" ");
-        while(d>140&&d<=160&&d<=number){
-            System.out.print("ツ");
-            d++;
-        }
-        System.out.println(" ");
-        while(d>160&&d<=180&&d<=number){
-            System.out.print("ツ");
-            d++;
-        }
-        System.out.println(" ");
-        while(d>180&&d<=200&&d<=number){
-            System.out.print("ツ");
-            d++;
-        }
-        System.out.println(" ");
+        System.out.println(" ");//print space to start new line
+        System.out.print("DO While loop: ");//print titile
+        n=10;//define n
+        do{//do while loop
+            c=0;//define c
+            i=2;//define i
+          do{if(n%i==0){//check if statement and do while loop
+             c++;//define c
+            }//end if function
+            i++;//define i
+            }while(i<(n/2));//end do while loop if i<(n/2)
+        if(c==0){//check if statement
+            System.out.print(" "+n);}//print result and end if statement
+            n++;//define n
+       }while(n<100);//end do while loop if n<100
         
-    }
-}
+        System.out.println(" ");//print a space to start a new line
         
         
+        System.out.println("Step 3: ");//print the title
+        int number = (int)(Math.random()*200)+1;//pick random number from 1-200
+        int d=0;//input d to count
+        int k=number%20;//get reminder
+        int h=number-k;//get mutiples of 20
+        while(h>0){//check while loop condition
+            while(d<20){//check while loop condition
+            System.out.print("ツ");//print out result 
+            
+            d++;}//define n and end while loop
+            
+            if(d==20){//chekc d value
+                System.out.println(" ");//print a space to start a new line
+             d=0;//define d value
+            }//end if function
+         h=h-20;//define h
+            
+        }//end while loop
         
-    
+        while(k>0){//check k value
+            System.out.print("ツ");//print out result
+            k--;//define k
+        }
+        System.out.println(" ");//print a space to start a new line
+        
+        
+    }//end of method
+}//ennd of class
