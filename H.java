@@ -4,90 +4,37 @@ public class H{
     //add a main mathod
     public static void main (String[] args){
         Scanner myScanner=new Scanner(System.in);
-        System.out.print("Expenses for Monday: $");
-        String MondayCost=myScanner.next();
-        
-        /*int n=0;
-        int x=1;
-        while(x==1){
-        for (int i =0;i<MondayCost.length();i++){
-            if(Character.isLetter(MondayCost.charAt(i))){
-            n++;}
-            else{
-                n=n;
-            }}
-            
-            if (n!=0){
-            System.out.print("Please enter valid cost: $");
-                MondayCost=myScanner.next();
-                x=1;
-                n=0;}
-            else{
-                x--;
-            }    
-        }*/
-        
-        
-        int j=1;
-        while(j==1){
-            int n=0;
-        int x=1;
-        while(x==1){
-        for (int i =0;i<MondayCost.length();i++){
-            if(Character.isLetter(MondayCost.charAt(i))){
-            n++;}
-            else{
-                n=n;
-            }}
-            
-            if (n!=0){
-            System.out.print("Please enter valid cost: $");
-                MondayCost=myScanner.next();
-                x=1;
-                n=0;}
-            else{
-                x--;
-            }    
+        System.out.print("Please enter a 10 digit barcode: ");
+        String Code = myScanner.next();
+        if(Code.length()!=10){
+            System.out.print("Please enter 10 digits: ");
+            Code = myScanner.next();
         }
-            double Monday=Double.parseDouble(MondayCost);
-            if(Monday<0){
-                System.out.print("Please enter positive number: $");
-                MondayCost=myScanner.next();
-                 n=0;
-                 x=1;
-                while(x==1){
-                  for (int i =0;i<MondayCost.length();i++){
-                   if(Character.isLetter(MondayCost.charAt(i))){
-                    n++;}
-                   else{
-                    n=n;
-            }}
+        
+        int f=StringCode.indexOf("x");
             
-               if (n!=0){
-                 System.out.print("Please enter valid cost: $");
-                 MondayCost=myScanner.next();
-                 x=1;
-                 n=0;}
-               else{
-                x--;
-            }    
-        }
-                
-            }
-            else{
-                j--;
-            }
-        }
-        double Monday=Double.parseDouble(MondayCost);
-        System.out.println(Monday*2);
-                
-            
-                /*else{
-                    double Monday=Double.parseDouble(MondayCost);
-                }*/
-            
+        int n=0;//input n to count
+        int x=1;//input x to run ot stop inner while loop
+         while(x==1){//check condition of inner while loop
+              for (int i =0;i<Code.length();i++){//define for loop of number of letters of input string MondayCost
+                 if(Character.isLetter(Code.charAt(i))||Character.isDigit(Code.charAt(i))){//check condition
+                  n=n;}//define n and end if function
+                 else{//check is above condition is not satisified
+                  n++;//define n
+                     }//end else
+              }//end for loop
+         
+         if(n!=0){
+                  System.out.print("This is NOT a valid ISBN. Please enter 10 digits: ");
+                  Code = myScanner.next();
+              x=1;}
+         else if(n==0){
+                  x--;
+              }
+         }
         
         
         
-    }
+    
+}
 }
