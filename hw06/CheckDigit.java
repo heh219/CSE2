@@ -1,8 +1,4 @@
 /////////////////////////////////////////////////
-I will upload this program later, because I didn't fininsh it.
-I am so sorry for this.
-Because I need sometime to figure this.
-
 /*Huang he
 HomeWork 06
 CheckDigit
@@ -21,45 +17,51 @@ public class CheckDigit{
         Scanner myScanner = new Scanner( System.in );
         System.out.print("Please enter a 10 digit barcode: ");
         String Code = myScanner.next();
-        
-        if(Code.length!=10){
+        char character;
+        int digit, sum=0, k=10;
+        while(Code.length()!=10){
             System.out.print("Please enter 10 digits: ");
             Code = myScanner.next();
         }
-    
-        int m=0;
-        int y=1;
-        while(y==1){
-         int n=0;//input n to count
-         int x=1;//input x to run ot stop inner while loop
-         while(x==1){//check condition of inner while loop
-              for (int i =0;i<Code.length();i++){//define for loop of number of letters of input string MondayCost
-                 if(Character.isLetter(Code.charAt(i))||Character.isDigit(Code.charAt(i))){//check condition
-                  m++;
-                  n=n;}//define n and end if function
-                 else{//check is above condition is not satisified
-                  n++;//define n
-                     }//end else
-              }//end for loop
-         
-         if(n!=0){
-                  System.out.print("This is NOT a valid ISBN. Please enter 10 digits: ");
-                  Code = myScanner.next();
-              x=1;}
-         else if(n==0){
-                  x--;
-              }
-         else if(m!=10){
-             System.out.print("This is NOT a valid ISBN. Please enter 10 digits: ")
-         }
-         }
-         if(x==0){
-             y--;
-         }
-         else{
-             y=y;
-         }
+        
+        for(int i=0; i<Code.length(); i++){
+            character=Code.charAt(i);
+            if(character=='X'){
+                digit=10;
+            }
+            else{
+                digit=character-48;
+            }
+            sum=sum+digit*k;
+            k--;
         }
+            int check = sum % 11;
+            for (int n=0;n<9;n++){
+            if(Character.isLetter((Code.charAt(n)))){
+            System.out.println("This is NOT a valid ISBN.Please enter 10 digits:");
+            Code = myScanner.next();
+             }
+            }
+            
+            
+ 
+            if(Code.charAt(9) == check){
+            System.out.println("This is a valid ISBN.");
+            }
+            else if(check==10&&Code.charAt(9)=='X'){
+            System.out.println("This is a valid ISBN.");
+            }
+            else if(0<check &&check <10){
+            System.out.println("This is NOT a valid ISBN.Check digit should be " + check);
+            }
+            else if(check==10&&Code.charAt(9)!='X'){
+                System.out.println("This is NOT a valid ISBN. Check digit should be X");
+            }
+            
+
+        
+    
+        
          
          
          
