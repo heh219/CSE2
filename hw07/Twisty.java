@@ -99,7 +99,7 @@ public class Twisty{
     }
     l--;
     }
-       int w=Integer.parseInt(Width);
+       int w=Integer.parseInt(Width);//convert double to interger
        
        int g=L%(2*w);
        int h=L/w;
