@@ -24,24 +24,30 @@ public class CheckDigit{
             Code = myScanner.next();
         }
         
-        for(int i=0; i<Code.length(); i++){
+        for (int i=0;i<9;i++){
+            if(Character.isLetter((Code.charAt(i)))){
+            System.out.println("This is NOT a valid ISBN.Please enter 10 digits:");
+            Code = myScanner.next();
+             }
+            }
+        
+        for(int i=0; i<Code.length()-1; i++){
             character=Code.charAt(i);
             if(character=='X'){
                 digit=10;
             }
             else{
                 digit=character-48;
+                
             }
             sum=sum+digit*k;
             k--;
+            
         }
+        
             int check = sum % 11;
-            for (int n=0;n<9;n++){
-            if(Character.isLetter((Code.charAt(n)))){
-            System.out.println("This is NOT a valid ISBN.Please enter 10 digits:");
-            Code = myScanner.next();
-             }
-            }
+            
+            
             
             
  

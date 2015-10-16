@@ -1,8 +1,20 @@
+//////////////////////////////////////////////////
+/*He Huang
+Lab 08
+Stats
+Oct. 16*/
+
+//first compile the program
+//    javac Stats.java
+//run this program
+//    java Stats
+
 import java.util.Scanner;
 //define a class
-public class H{
-    //add a main mathod
-    public static void main (String[] args){
+public class Stats{
+    //add main method
+    
+        public static void main(String[] args){
         Scanner myScanner = new Scanner(System.in);
         System.out.print("Please enter a double: ");
         double input1 = myScanner.nextDouble();//input double 
@@ -58,11 +70,37 @@ public class H{
             x--;//stop while loop
         }
         }//end while loop
-         double meanValue = 1/5 * (input1+input2+input3+input4+input5);
-         System.out.println(meanValue);
         
         
+        double M = Mean(input1,input2,input3,input4,input5);
+            
+            System.out.println("The mean value is "+ M);//print out mean
         
-    
-}
-}
+        
+        double m = Median(input3);
+        System.out.println("The median value is "+m);//print out median
+        }
+        //add a method
+        public static double Mean(double input1, double input2, double input3, double input4, double input5){
+          
+         
+          return (input1+input2+input3+input4+input5)/5;//return the result
+        } 
+        //add a method
+        public static double Median(double input3){
+            
+            return input3;
+        }
+          
+        
+
+
+
+        
+
+
+
+
+
+        
+    }
