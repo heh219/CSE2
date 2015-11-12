@@ -17,83 +17,119 @@ public class CSE2Linear{
     public static void main(String args[]){
         Scanner myScanner = new Scanner(System.in);
         int[] grades = new int[15];
+        boolean run = true;
         System.out.print("Enter 15 ints for finial grades in CSE2: ");
         for(int i=0;i<grades.length;i++){
-            if(myScanner.hasNextInt()){
-                grades[i]=myScanner.nextInt();
-                if(grades[i]<0||grades[i]>100){
-                    System.out.println("Int not between o and 100.");
-                    System.exit(1);
-                }
+            if(myScanner.hasNextInt()){                             //check if the input is integer
+                grades[i]=myScanner.nextInt();                      //give each number of array value
+                if(grades[i]<0||grades[i]>100){                     //check the array value
+                    System.out.println("Integer you input are not between o and 100.");
+                    run=false;
+                    break;                                          //stop and print out
+                }                                                   //end if statement
+                if(i>0){                                            //check index value
+                    if(grades[i]<grades[i-1]){                      //check whether the array is increasing trend
+                        System.out.println("You should input value in an increasing trend");
+                        run=false;
+                        break;                                      //stop and print out
+                    }                                               //end if statement
+                    
+                }//end if statement
+                else{                                                   //check if input do not satisify above conditions
+                run=run;
+            }
                 
-            }
-            else{
+            }                                                       //end if statement
+            else if(!myScanner.hasNextInt()){                       //check the input if input is not integer
                 System.out.println("Error! Your input are not integers!");
-                System.exit(1);
+                run=false;
+                break;                                              //stop and print out
             }
+            
+        
         }
-        System.out.println("Sorted: ");
-        int[] newArray = sort(grades);
-        for (int i = 0; i < newArray.length; i++) {
-            System.out.print(newArray[i] + " ");
-        }
-        System.out.println();
-        System.out.print("Enter a grade to search for: ");
+        
+        
+        if(run==true){                                              //run if run is true
+    
+        System.out.print("Enter a grade to search for: ");          
         int search = myScanner.nextInt();
-        linear(search,grades);
-        Scrambled(grades);
+        binary(search,grades);                                      //use binary method
+        Scrambled(grades);                                          //use scrambled method
         System.out.print("Enter a grade to search for: ");
-        int search2 = myScanner.nextInt();
-        linear(search2,grades);
+        int search2 = myScanner.nextInt();                          
+        linear(search2,grades);                                     //use linear method
+        }                                                           //end if statement   
         
         
         
-    }
+        
+        
+    }//end of main method
     
-    
+    //add a method to do linear search
     public static void linear(int key, int[] array){
-        int iterations=0;
+        int iterations=0;                                           //initialize iterations
         int i=0;
         for(i=0; i<array.length;i++){  
             iterations++;
-            if(array[i]==key){
+            if(array[i]==key){                                      //check if we find the key
                 System.out.println(key+" was found in the list with "+iterations+" iterations.");
                 break;
-            }//end if statment
-        }//end for statment
-        if(i==array.length){
+            }
+        }
+        if(i==array.length){                                        //we didn't find the key
                 System.out.println(key+" was not found in the list with "+iterations+" iterations.");
-            }//end else if statement
-    }//end linear search method
-
+            }
+    }//end of linear search method
+    
+    //add a method to do binary search
+    public static void binary(int key, int[] array){
+        int low = 0;                                  
+        int high = array.length-1;
+        int middle;
+        int iterations=0;
+        while(low<=high){
+            iterations++;
+            middle = (low+high)/2;
+            if(array[middle]==key){                                 //check if we find the key
+                System.out.println(key+" was found in the list with "+iterations+" comparisons.");
+                break;
+            }
+            else if(array[middle]>key){                             //change the value of high if condition satisfy
+                high=middle;
+            }
+            else if(array[middle]<key){                             //change the value of low if condition satisfy
+                low=middle;
+            }
+            
+        }
+        if(high<low){                                               //check if we didn't find the key
+            System.out.println(key+" was not found in the list with "+iterations+" comparisons.");
+            
+        }
+        
+    }//end of binary method
+    
+    //add a method to scramble array
     public static void Scrambled(int[] array){
         System.out.println("Scrambled: ");
-        for(int i=0;i<array.length;i++){
-            int x=(int)(Math.random()*15);
-            int temp=array[x];
-            array[x]=array[i];
+        int index;
+        Random random = new Random();
+        for(int i=array.length-1;i>0;i--){
+            index = random.nextInt(i+1);
+            int temp = array[index];
+            array[index] = array[i];
             array[i]=temp;
             System.out.print(array[i]+" ");
         }
         System.out.println("");
-        return;
-    }
+    }//end of Scrambled method
     
-    public static int [] sort(int[] array) {
-        int[] sorted = array;
-        for (int i = 0; i < sorted.length; i++) {
-            for (int j = i+1; j < sorted.length; j++) {
-                if ( (sorted[i] > sorted[j]) && (i != j) ) {
-                    int temp = sorted[j];
-                    sorted[j] = sorted[i];
-                    sorted[i] = temp;
-                }
-                
-            }
-        }
-        
-        return sorted;
-    }
-}
+    
+    
+    
+    
+}//end of class
 
 
