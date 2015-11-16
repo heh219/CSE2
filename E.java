@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class E{
-//public static void main(String args[]){
+public static void main(String args[]){
     /*Scanner myScanner = new Scanner(System.in);
     System.out.print("input = ");
     int i = myScanner.nextInt();
@@ -35,7 +35,7 @@ public class E{
             
         }
         
-    }*/
+    }
     
 public static int [] sort(int[] asd) {
         int[] sorted = asd;
@@ -56,7 +56,7 @@ public static int [] sort(int[] asd) {
    /* public static int findMode(int[] sorted) {
         // do whatever you want to do here...
         return 0;
-    }*/
+    }
 
     public static void main(String[] args) {
         int[] array = {3,2,5,4,1,1,1,1,10,9};
@@ -67,7 +67,23 @@ public static int [] sort(int[] asd) {
         }
         System.out.println();
         //System.out.print(findMode(potato));
-    }
+    }*/
+       int number = (int)(Math.random()*10)+10;
+        System.out.println("N"+number);
+        int[][] newArray = new int[number][];
+        int size;
+        for(int n=0;n<number;n++){
+            size = (int)(Math.random()*10)+10;
+            newArray[n]=new int[size];
+            System.out.println(size+" : ");
+          for(int i=0;i<size;i++){
+            int value=(int)(Math.random()*2000)-1000;
+            newArray[n][i]=value;
+            System.out.print(value+" ");
+          }
+          System.out.println("");
+        }
+}
 }
 
 
